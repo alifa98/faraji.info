@@ -6,7 +6,7 @@ I am a master student at York University, Toronto, Canada. I am currently workin
 
 ## Contact
 * Email: [ali@faraji.info](mailto:ali@faraji.info)
-* LinkedIn: [linkedin.com/in/alifaraji98](https://www.linkedin.com/in/alifaraji98/
+* LinkedIn: [linkedin.com/in/alifaraji98](https://www.linkedin.com/in/alifaraji98/)
 
 
 ## Research Interests
