@@ -2,11 +2,12 @@
 
 ## About Me
 
-I am a master student at York University, Toronto, Canada. I am currently working on my thesis in the area of dynamic graphs and machine learning. I am also a member of the [Data Mining Lab](https://dminer.eecs.yorku.ca/) at York University.
+I am a master's student at York University, Toronto, Canada. I am currently working on my thesis on spatiotemporal data and machine learning.
+I am also a member of the [Data Mining Lab](https://dminer.eecs.yorku.ca/) at York University.
 
 ## Contact
 * Email: [ali@faraji.info](mailto:ali@faraji.info)
-* LinkedIn: [linkedin.com/in/alifaraji98](https://www.linkedin.com/in/alifaraji98/)
+* LinkedIn [linkedin.com/in/alifaraji98](https://www.linkedin.com/in/alifaraji98/)
 
 
 ## Research Interests
