@@ -1,63 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-500">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Faraji</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style-output.css">
+    <meta name="description"
+        content="Ali Faraji's website includes CV, personal & work experience information, and contact info." />
+    <meta property="og:title" content="Ali Faraji" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://faraji.info/" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/31096694" />
 
-    <style>
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            max-width: 1200px !important;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-slate-500">
             <div class="flex-1">
-                <a class="btn btn-ghost text-xl">Ali Faraji</a>
+                <a class="btn btn-ghost text-xl  focus:bg-transparent  hover:bg-transparent text-zinc-50"
+                    href="https://faraji.info/" title="Personal Website of Ali Faraji">Ali Faraji</a>
+                <a class="btn btn-ghost border-0 focus:bg-transparent text-zinc-100"
+                    href="mailto:ali@faraji.info?subject=[Via Blog Email] Subject" title="Contact Ali Faraji By Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path fill="currentColor"
+                            d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                    </svg>
+                    Contact Me
+                </a>
             </div>
             <div class="flex-none">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a>Link</a></li>
-                    <li>
-                        <details>
-                            <summary>
-                                Resources
-                            </summary>
-                            <ul class="p-2 bg-base-100 rounded-t-none">
-                                <li><a>Link 1</a></li>
-                                <li><a>Link 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex-none">
-                <label class="swap swap-rotate">
-                    <!-- this hidden checkbox controls the state -->
-                    <input type="checkbox" />
-                    <!-- sun icon -->
-                    <svg class="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-                    </svg>
-                    <!-- moon icon -->
-                    <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-                    </svg>
-                </label>
+                <a class="btn blog-btn-grad border-0" href="https://blog.faraji.info/" title="Ali Faraji's Blog">My
+                    Blog</a>
             </div>
         </div>
-    </div>
+        <div class="card card-side glass flex-col md:flex-row">
+            <figure class="w-full  md:w-1/4 aspect-square md:aspect-auto"><img class="rounded-lg"
+                    src="assets/ali-faraji-3.jpg" alt="Movie" />
+            </figure>
+            <div class="card-body w-full md:w-3/4">
+                <h2 class="card-title">Welcome</h2>
+                <p class="text-justify">
+                    I'm Ali Faraji, a fervent Machine Learning enthusiast with a deep appreciation for open-source
+                    initiatives and a profound interest in Mathematics. My technical repertoire spans across a wide
+                    range of disciplines including Python, Pytorch, Data Visualization, Java EE, backed development and
+                    much more, showcasing my flexibility and broad spectrum of skills. Although I consider myself a jack
+                    of all trades, my true strength lies in my quick learning abilities. I thrive on diving into new
+                    challenges, unraveling the complexities of documentation and code to grasp the underlying principles
+                    of new technologies and frameworks. This agile approach to learning and adaptation fuels my
+                    continuous growth in the fast-evolving tech landscape.
+                </p>
+                <p class="text-justify">
+                    Beyond my technical skills, I am deeply committed to expanding my knowledge and expertise. I hold a
+                    Computer Engineering degree from AmirKabir University of Technology and am furthering my education
+                    with a Computer Science degree from York University in Canada. My academic and professional journey
+                    has been marked by a keen focus on machine learning, deep neural networks, and data science,
+                    underpinned by a solid foundation in statistics and data visualization. Beside of my professional
+                    work, I have a passion for Mathematics, and exploring new frontiers in technology, including LLMs,
+                    Transformers, application of AI in different domains, also technologies and frameworks for
+                    application development and deployment (I like how these tools makes the life for developers easier
+                    such as Spring Boot and CI/CD pipelines). My life outside of academia and work is filled with
+                    hobbies that align with my passion for continuous learning, including developiong applications,
+                    using AI in different domains, making educational contents, and contributing to open-source
+                    projects.
+                </p>
+                <div class="card-actions justify-end">
+                    <a class="btn bg-gradient-to-t from-blue-400 to-blue-300 outline-none border-0"
+                        href="assets/Ali_Faraji_full_public_latest.pdf" target="_blank"
+                        title="Download Full Resume in PDF">Download Full Resume (PDF)</a>
 
+                    <!-- FIXME: fix the project page & update the link -->
+                    <a class="btn btn-disabled bg-gradient-to-t from-orange-400 to-red-300 outline-none border-0"
+                        href="/" title="Ali Faraji's Projects">Projects (Disabled)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card glass mt-6">
+            <div class="card-body">
+                <h2 class="card-title">Find me on ...</h2>
+                <div class="card-actions justify-center">
+                    <a class="btn bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-400 outline-none border-0"
+                        target="_blank" href="https://www.instagram.com/faraji.info/"
+                        title="Ali Faraji's Page on Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                        Instagram
+                    </a>
+                    <a class="btn bg-gradient-to-r from-slate-300 to-gray-300 outline-none border-0" target="_blank"
+                        href="https://github.com/alifa98" title="Ali Faraji's Profile & Codes on GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                            viewBox="0 0 496 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        </svg>
+                        Github
+                    </a>
+                    <a class="btn bg-gradient-to-r from-sky-300 to-blue-300 outline-none border-0" target="_blank"
+                        href="https://scholar.google.com/citations?user=HUGFaVAAAAAJ&hl=en"
+                        title="Ali Faraji's Profile on Google Scholar">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z" />
+                        </svg>
+                        Google Scholar
+                    </a>
+                    <a class="btn bg-gradient-to-r from-indigo-300 to-blue-300 outline-none border-0" target="_blank"
+                        href="https://www.linkedin.com/in/alifaraji98/" title="Ali Faraji's Profile on LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                        </svg>
+                        Linkedin
+                    </a>
+                    <a class="btn bg-gradient-to-r from-orange-300 to-amber-300 outline-none border-0" target="_blank"
+                        href="https://stackoverflow.com/users/20618350/ali"
+                        title="Ali Faraji's Profile on StackOverflow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                            viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z" />
+                        </svg>
+                        StackOverflow
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer items-center p-4 bg-neutral text-neutral-content mt-6 rounded-md">
+            <aside class="items-center grid-flow-col">
+                <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                    clip-rule="evenodd" class="fill-current">
+                    <path
+                        d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+                    </path>
+                </svg>
+                <p>Copyright © 2024 - All right reserved</p>
+            </aside>
+        </footer>
+    </div>
 
 </body>
 
