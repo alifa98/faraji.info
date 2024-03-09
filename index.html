@@ -17,9 +17,9 @@
 
 <body>
     <div class="container">
-        <div class="navbar bg-slate-500">
+        <div class="navbar bg-slate-500 flex-col sm:flex-row">
             <div class="flex-1">
-                <a class="btn btn-ghost text-xl  focus:bg-transparent  hover:bg-transparent text-zinc-50"
+                <a class="btn btn-ghost text-xl focus:bg-transparent  hover:bg-transparent text-zinc-50"
                     href="https://faraji.info/" title="Personal Website of Ali Faraji">Ali Faraji</a>
                 <a class="btn btn-ghost border-0 focus:bg-transparent text-zinc-100"
                     href="mailto:ali@faraji.info?subject=[Via Blog Email] Subject" title="Contact Ali Faraji By Email">
@@ -32,7 +32,8 @@
                 </a>
             </div>
             <div class="flex-none">
-                <a class="btn blog-btn-grad border-0" href="https://blog.faraji.info/" title="Ali Faraji's Blog">My
+                <a class="btn btn-wide blog-btn-grad border-0" href="https://blog.faraji.info/"
+                    title="Ali Faraji's Blog">My
                     Blog</a>
             </div>
         </div>
@@ -40,7 +41,7 @@
             <figure class="w-full  md:w-1/4 aspect-square md:aspect-auto"><img class="rounded-lg"
                     src="assets/ali-faraji-3.jpg" alt="Movie" />
             </figure>
-            <div class="card-body w-full md:w-3/4">
+            <div class="card-body w-full md:w-3/4 text-black">
                 <h2 class="card-title">Welcome</h2>
                 <p class="text-justify">
                     I'm Ali Faraji, a fervent Machine Learning enthusiast with a deep appreciation for open-source
@@ -66,21 +67,12 @@
                     using AI in different domains, making educational contents, and contributing to open-source
                     projects.
                 </p>
-                <div class="card-actions justify-end">
-                    <a class="btn bg-gradient-to-t from-blue-400 to-blue-300 outline-none border-0 text-black"
-                        href="assets/Ali_Faraji_full_public_latest.pdf" target="_blank"
-                        title="Download Full Resume in PDF">Download Full Resume (PDF)</a>
-
-                    <!-- FIXME: fix the project page & update the link -->
-                    <a class="btn btn-disabled bg-gradient-to-t from-orange-400 to-red-300 outline-none border-0 text-balck"
-                        href="/" title="Ali Faraji's Projects">Projects (Disabled)</a>
-                </div>
             </div>
         </div>
 
         <div class="card glass mt-6">
             <div class="card-body">
-                <h2 class="card-title">Find me on ...</h2>
+                <h2 class="card-title text-black">Find me on ...</h2>
                 <div class="card-actions justify-center">
                     <!-- <a class="btn bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-400 outline-none border-0"
                         target="_blank" href="https://www.instagram.com/faraji.info/"
@@ -101,7 +93,6 @@
                         </svg>
                         <span class="text-white">YouTube</span>
                     </a>
-
                     <a class="btn bg-gradient-to-r from-slate-300 to-gray-300 outline-none border-0" target="_blank"
                         href="https://github.com/alifa98" title="Ali Faraji's Profile & Codes on GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
@@ -130,6 +121,16 @@
                         </svg>
                         <span class="text-blue-900">LinkedIn</span>
                     </a>
+                    <a class="btn bg-gradient-to-r from-zinc-700 to-zinc-900 outline-none border-0" target="_blank"
+                        href="" title="Ali Faraji's Twitter / X Page">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-100" stroke="currentColor"
+                            fill="currentColor"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                        </svg>
+                        <span class="text-gray-100">X (Twitter)</span>
+                    </a>
                     <a class="btn bg-gradient-to-r from-orange-300 to-amber-300 outline-none border-0" target="_blank"
                         href="https://stackoverflow.com/users/20618350/ali"
                         title="Ali Faraji's Profile on StackOverflow">
@@ -141,6 +142,19 @@
                         <span class="text-amber-900">StackOverflow</span>
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <div class="card glass mt-6">
+            <div class="card-body">
+                <h2 class="card-title text-black">Little Updates</h2>
+                <!-- just a list of senetences -->
+                <div>
+                    <ul class="list-disc list-inside text-black">
+                        <li>📚 I'm currently working on my thesis on "Machine Unlearning".</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
