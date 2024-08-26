@@ -10,6 +10,7 @@ html {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #74ebd5, #ACB6E5);
     color: #333;
+    background-attachment: fixed;
 }
 
 .container {
