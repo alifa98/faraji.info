@@ -13,13 +13,21 @@ html {
 }
 
 .container {
-    text-align: center;
     max-width: 600px;
     padding: 2em;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.content, .socials{
+    text-align: center;
+}
+
+.links{
+    text-align: left;
+}
+
 
 h1 {
     margin: 0.5em 0;
@@ -53,22 +61,45 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.green-btn {
+.github-btn {
     color: white;
-    background-color: #4CAF50;
+    background-color: #333;
 
 }
-
-.green-btn:hover {
-    background-color: #45a049;
+.github-btn:hover {
+    background-color: #222;
 }
 
-.blue-btn {
+.x-platform-btn {
     color: white;
-    background-color: #2196F3;
+    background-color: #007bff;
 }
-.blue-btn:hover {
-    background-color: #1e87f0;
+.x-platform-btn:hover {
+    background-color: #0056b3;
+}
+
+.instagram-btn {
+    color: white;
+    background-color: #e1306c;
+}
+.instagram-btn:hover {
+    background-color: #c13584;
+}
+
+.youtube-btn {
+    color: white;
+    background-color: #FF0000;
+}
+.youtube-btn:hover {
+    background-color: #CC0000;
+}
+
+.linkedin-btn {
+    color: white;
+    background-color: #0077b5;
+}
+.linkedin-btn:hover {
+    background-color: #006699;
 }
 
 .profile-image {
