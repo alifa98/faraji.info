@@ -60,7 +60,7 @@ header.content {
     display: flex;
     align-items: center; /* Vertically aligns items */
     gap: 15px; /* Adds space between the image and the text */
-    padding: 20px; /* Optional: Adds some padding around the header */
+    padding: 0 0 10pt 0;
 }
 
 @media (max-width: 600px) {
