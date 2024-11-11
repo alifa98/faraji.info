@@ -4,7 +4,6 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
@@ -15,13 +14,14 @@ html {
 
 .container {
     max-width: 600px;
+    margin: 5pt auto;
     padding: 2em;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content, .socials{
+.content{
     text-align: center;
 }
 
@@ -29,78 +29,24 @@ html {
     text-align: left;
 }
 
-
-h1 {
-    margin: 0.5em 0;
-    font-size: 2.5em;
+.links ul {
+    list-style-type: "\1F517";
+}
+.links ul li {
+    padding: 0 0 0 0.5em;
 }
 
-h2 {
-    margin: 0.5em 0 0 0;
-    font-size: 1.5em;
-    color: #555;
+.info ul {
+    list-style-type: "\1F449";
 }
-
-h3 {
-    margin: 0.3em 0;
-    font-size: 1em;
-    color: #555;
+.info ul li {
+    padding: 0 0 0 0.5em;
+    margin: 0 0 0.5em 0;
 }
 
 p {
     font-size: 1.2em;
-    margin: 1em 0;
-}
-
-.button {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    margin-top: 1em;
-    font-size: 1em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.github-btn {
-    color: white;
-    background-color: #333;
-
-}
-.github-btn:hover {
-    background-color: #222;
-}
-
-.x-platform-btn {
-    color: white;
-    background-color: #007bff;
-}
-.x-platform-btn:hover {
-    background-color: #0056b3;
-}
-
-.instagram-btn {
-    color: white;
-    background-color: #e1306c;
-}
-.instagram-btn:hover {
-    background-color: #c13584;
-}
-
-.youtube-btn {
-    color: white;
-    background-color: #FF0000;
-}
-.youtube-btn:hover {
-    background-color: #CC0000;
-}
-
-.linkedin-btn {
-    color: white;
-    background-color: #0077b5;
-}
-.linkedin-btn:hover {
-    background-color: #006699;
+    text-align: justify;
 }
 
 .profile-image {
@@ -108,4 +54,59 @@ p {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 1em;
+}
+
+header.content {
+    display: flex;
+    align-items: center; /* Vertically aligns items */
+    gap: 15px; /* Adds space between the image and the text */
+    padding: 20px; /* Optional: Adds some padding around the header */
+}
+
+@media (max-width: 600px) {
+    header.content {
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Center-aligns content */
+        text-align: center; /* Centers text in the header */
+    }
+}
+
+header.content h1, header.content h2, header.content strong, header.content p {
+    margin: 2pt; /* Removes default margins from text elements */
+}
+
+
+.social-icons {
+    text-align: center;
+}
+
+.social-icons a {
+    color: #555; /* Adjust color as needed */
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-btn:hover {
+    color: #6e5494;
+}
+
+.x-platform-btn:hover {
+    color: #1f1e1e
+}
+
+.instagram-btn:hover {
+    color: #e1306c;
+}
+
+.google-schoar-btn:hover {
+    color: #4285f4;
+}
+
+.youtube-btn:hover {
+    color: #CC0000;
+}
+
+.linkedin-btn:hover {
+    color: #006699;
 }
