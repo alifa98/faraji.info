@@ -1,0 +1,3 @@
+[submodule "h3xplorer"]
+	path = h3xplorer
+	url = git@github.com:alifa98/h3xplorer.git
