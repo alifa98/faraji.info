@@ -5,6 +5,9 @@ on:
     - cron: "0 11 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fetch-feed:
     runs-on: ubuntu-latest
@@ -53,10 +56,7 @@ jobs:
             git add _data/feed.json
             git commit -m "Update blog feed"
       
-            # Set authenticated remote URL
-            git remote set-url origin https://alifa98:${{ secrets.FEED_UPDATER }}@github.com/alifa98/faraji.info.git
-            git push origin master
+            git push origin HEAD:master
           fi
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
