@@ -25,25 +25,6 @@ html {
     text-align: center;
 }
 
-.links{
-    text-align: left;
-}
-
-.links ul {
-    list-style-type: "\1F517";
-}
-.links ul li {
-    padding: 0 0 0 0.5em;
-}
-
-.info ul {
-    list-style-type: "\1F449";
-}
-.info ul li {
-    padding: 0 0 0 0.5em;
-    margin: 0 0 0.5em 0;
-}
-
 p {
     font-size: 1.2em;
     text-align: justify;
@@ -82,7 +63,7 @@ header.content h1, header.content h2, header.content strong, header.content p {
 
 .social-icons a {
     color: #555; /* Adjust color as needed */
-    font-size: 24px;
+    font-size: 32px;
     text-decoration: none;
     transition: color 0.3s;
 }
