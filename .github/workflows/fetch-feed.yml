@@ -1,0 +1,58 @@
+name: Fetch RSS Feed
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+jobs:
+  fetch-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install feedparser
+        run: pip install feedparser
+
+      - name: Fetch RSS and save to _data/feed.json
+        run: |
+          python - <<EOF
+          import feedparser, json
+
+          FEED_URL = "https://blog.faraji.info/feed.xml"
+          MAX_ITEMS = 5
+
+          feed = feedparser.parse(FEED_URL)
+          items = []
+          for entry in feed.entries[:MAX_ITEMS]:
+              items.append({
+                  "title": entry.title,
+                  "link": entry.link,
+                  "published": entry.published
+              })
+
+          with open('_data/feed.json', 'w') as f:
+              json.dump(items, f, indent=2)
+          EOF
+
+      - name: Commit and Push changes if feed updated
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          # Check if anything actually changed
+          if git diff --quiet; then
+            echo "No changes in feed. Skipping commit."
+          else
+            git add _data/feed.json
+            git commit -m "Update blog feed"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

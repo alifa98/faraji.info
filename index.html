@@ -1,3 +1,6 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -140,15 +143,10 @@
           <h2>MSc in Computer Science</h2>
           <strong>BSc in Computer Engineering</strong> |
           <strong>BSc in Mathematics and Its Applications</strong>
-          <div>Email: <a href="mailto:ali@faraji.info">ali@faraji.info</a></div>
-          <div>
-            IEEE CS related emails:
-            <a href="mailto:ali@computer.org">ali@computer.org</a>
-          </div>
         </div>
       </header>
 
-      <aside class="social-icons" areia-label="Social Media Links">
+      <aside class="social-icons" aria-label="Social Media Links">
         <a
           href="https://www.linkedin.com/in/alifaraji98/"
           target="_blank"
@@ -156,7 +154,7 @@
           class="linkedin-btn"
           aria-label="LinkedIn Profile"
         >
-          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
         </a>
         <a
           href="https://github.com/alifa98"
@@ -165,7 +163,7 @@
           class="github-btn"
           aria-label="GitHub Profile"
         >
-          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
         <a
           href="https://scholar.google.com/citations?user=HUGFaVAAAAAJ"
@@ -174,7 +172,7 @@
           class="google-scholar-btn"
           aria-label="Google Scholar Profile"
         >
-          <i class="fa-brands fa-google-scholar"></i>
+          <i class="fa-brands fa-google-scholar" aria-hidden="true"></i>
         </a>
         <a
           href="https://x.com/AliFaraji312230"
@@ -183,67 +181,74 @@
           class="x-platform-btn"
           aria-label="Twitter Profile"
         >
-          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
         </a>
       </aside>
 
       <main>
-        <p>
-          I'm Ali Faraji, a fervent Machine Learning enthusiast with a deep
-          appreciation for open-source initiatives and a keen interest in
-          Mathematics.
-        </p>
+        <section id="about">
+          <h2>About Me</h2>
+          <p>
+            I'm Ali Faraji, a fervent Machine Learning enthusiast with a deep
+            appreciation for open-source initiatives and a keen interest in
+            Mathematics. My expertise spans data science, trustworthy AI, and
+            optimization. I'm passionate about contributing to the open-source
+            community and exploring the theoretical underpinnings of artificial
+            intelligence. (<a href="https://blog.faraji.info/about/"
+              >About Me Page</a
+            >)
+          </p>
+        </section>
 
-        <h2>Hyper Links</h2>
-        <section class="links">
+        <section id="skills-interests">
+          <h2>Skills & Interests</h2>
           <ul>
             <li>
-              Something that I am interested in:
-              <a
-                href="https://blog.faraji.info/machine-learning/machine-unlearning.html"
-                target="_blank"
-              >
-                Machine Unlearning / Model Editing Problem
-              </a>
-              and its applications, of course.
+              <strong>Keywords:</strong> Open-Source/Weight, Machine Learning,
+              Trustworthy AI, Responsible AI, Machine Learning Theory, Game
+              Theory, Graph Theory, Optimization.
             </li>
+            <li><strong>Research Focus:</strong> Machine Un/Learning</li>
           </ul>
         </section>
 
-        <h2>Info</h2>
-
-        <section class="info">
+        <section id="blog-publications">
+          <h2>Recent Blog Posts</h2>
+          <p>
+            Recent posts published on my
+            <a href="https://blog.faraji.info/">Blog</a>
+          </p>
+          {% for post in site.data.feed %}
           <ul>
             <li>
-              Keywords that I like:
-              <strong>Open-{Source/Weight}</strong>,
-              <strong>Machine Learning</strong>,
-              <strong>Trustworthy AI</strong>,
-              <strong>Machine Learning Theory</strong>,
-              <strong>Game Theory</strong>, <strong>Graph Theory</strong>,
-              <strong>Optimization</strong>.
+              <a href="{{ post.link }}" target="_blank">{{ post.title }}</a><br>
+              <small>{{ post.published | date: "%A" }}, {{ post.published | date_to_long_string: "ordinal" }}</small>
             </li>
+          </ul>
+          {% endfor %}
+        </section>
+
+        <section id="links">
+          <h2>Links</h2>
+          <p>Here are some useful links to explore more</p>
+          <ul>
             <li>
-              Find my projects and contributions on my
+              Explore my open-source projects and contributions on my
               <a href="https://github.com/alifa98" target="_blank"
                 >GitHub Profile</a
               >.
             </li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Feel free to reach out via:</p>
+          <ul>
+            <li>Email: <a href="mailto:ali@faraji.info">ali@faraji.info</a></li>
             <li>
-              My
-              <a href="https://blog.faraji.info/" target="_blank"
-                >blog.faraji.info</a
-              >, where I share my academic and technical thoughts and insights.
-            </li>
-            <li>
-              My Telegram channel that I write about the papers I am reading and
-              notes about AI, in Persian:
-              <a href="https://t.me/s/NeuralNotesBlog">Neural Notes</a>
-            </li>
-            <li>
-              A detailed about-me:
-              <a href="https://blog.faraji.info/about/">About Me Page</a>, if
-              you are interested.
+              IEEE CS related emails:
+              <a href="mailto:ali@computer.org">ali@computer.org</a>
             </li>
           </ul>
         </section>
