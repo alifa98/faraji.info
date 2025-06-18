@@ -1,7 +1,27 @@
 [
-    {
-        "title": "Jaywalking I: The Description",
-        "link": "https://blog.faraji.info/optimization/jay-walking-1.html",
-        "published": "2025-07-17T00:00:00Z"
-    }
+  {
+    "title": "I can speak Toronto: Pretraining a Trajectory Foundation Model",
+    "link": "https://blog.faraji.info/machine-learning/trajectory-foundation-model.html",
+    "published": "Fri, 13 Jun 2025 17:21:04 +0000"
+  },
+  {
+    "title": "Jaywalking I: The Description",
+    "link": "https://blog.faraji.info/optimization/jay-walking-1.html",
+    "published": "Tue, 29 Apr 2025 01:32:04 +0000"
+  },
+  {
+    "title": "ChatGPT Internal Library: Ace Tools",
+    "link": "https://blog.faraji.info/security/chat-gpt-internal-lib-ace-tools.html",
+    "published": "Sat, 29 Mar 2025 21:56:14 +0000"
+  },
+  {
+    "title": "Confirmation Bias",
+    "link": "https://blog.faraji.info/cognitive-science/confirmation-bias.html",
+    "published": "Wed, 29 Jan 2025 02:56:57 +0000"
+  },
+  {
+    "title": "NeurIPS 2024: Forgetting/Unlearning is hard!",
+    "link": "https://blog.faraji.info/machine-learning/challenges-of-machine-unlearning.html",
+    "published": "Mon, 16 Dec 2024 19:15:18 +0000"
+  }
 ]
