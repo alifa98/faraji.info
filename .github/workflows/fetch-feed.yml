@@ -45,14 +45,18 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-
-          # Check if anything actually changed
+      
+          # Check for changes
           if git diff --quiet; then
             echo "No changes in feed. Skipping commit."
           else
             git add _data/feed.json
             git commit -m "Update blog feed"
-            git push
+      
+            # Set authenticated remote URL
+            git remote set-url origin https://alifa98:${{ secrets.FEED_UPDATER }}@github.com/alifa98/faraji.info.git
+            git push origin master
           fi
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
