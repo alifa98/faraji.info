@@ -172,8 +172,8 @@ layout: default
         {% for post in site.data.feed %}
         <ul>
           <li>
-            <a href="{{ post.link }}" target="_blank">{{ post.title }}</a><br>
-            <small>{{ post.published | date: "%A" }}, {{ post.published | date_to_long_string: "ordinal" }}</small>
+            <a href="{{ post.link }}" target="_blank">{{ post.title }}</a><br> <small>{{ post.published | date: "%b %-d, %Y" }}</small>
+
           </li>
         </ul>
         {% endfor %}
