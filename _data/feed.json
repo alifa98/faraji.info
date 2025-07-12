@@ -1,5 +1,10 @@
 [
   {
+    "title": "ICML 2025 top 50 Papers That Might Shape the Future of ML \u2014 According to Gemini",
+    "link": "https://blog.faraji.info/machine-learning/icml-2025-top-papers.html",
+    "published": "2025-07-12T09:33:04+00:00"
+  },
+  {
     "title": "I can speak Toronto: Pretraining a Trajectory Foundation Model",
     "link": "https://blog.faraji.info/machine-learning/trajectory-foundation-model.html",
     "published": "2025-06-13T17:21:04+00:00"
@@ -18,10 +23,5 @@
     "title": "Confirmation Bias",
     "link": "https://blog.faraji.info/cognitive-science/confirmation-bias.html",
     "published": "2025-01-29T02:56:57+00:00"
-  },
-  {
-    "title": "NeurIPS 2024: Forgetting/Unlearning is hard!",
-    "link": "https://blog.faraji.info/machine-learning/challenges-of-machine-unlearning.html",
-    "published": "2024-12-16T19:15:18+00:00"
   }
 ]
