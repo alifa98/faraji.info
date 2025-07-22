@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Spy – Social Deduction Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1B2A;
+      --red: #E63946;
+      --white: #F1FAEE;
+      --emerald: #2A9D8F;
+      --emerald-light: #48bfae;
+      --yellow: #FFD60A;
+      --card-radius: 2rem;
+      --shadow: 0 6px 24px rgba(13,27,42,0.12), 0 1.5px 5px rgba(0,0,0,0.10);
+      --transition: 0.35s cubic-bezier(.7,.2,.17,1);
+    }
+    html, body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      min-width: 100vw;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background: var(--bg);
+      transition: background 0.5s;
+    }
+    .container {
+      width: 100vw;
+      max-width: 410px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+    }
+    .card {
+      background: var(--white);
+      color: var(--bg);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: 2.2rem 1.7rem 2.1rem 1.7rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 410px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadein var(--transition) 1;
+      position: relative;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(18px) scale(0.98);}
+      to   { opacity: 1; transform: none;}
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin: 0 0 0.8rem 0;
+      color: var(--red);
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.1rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: var(--emerald);
+    }
+    label, .subtitle, .instruction, .mutetip {
+      display: block;
+      font-weight: 500;
+      font-size: 1.02rem;
+      margin: 0.4rem 0 0.8rem 0;
+      color: #b2c8e1;
+      text-align: center;
+    }
+    .mutetip {
+      font-size: 0.98rem;
+      color: #88a6cc;
+      margin: 0.2rem 0 1.2rem 0;
+      font-style: italic;
+    }
+    .btn {
+      background: var(--emerald);
+      color: var(--white);
+      border: none;
+      border-radius: 1.3rem;
+      font-size: 1.18rem;
+      font-family: inherit;
+      font-weight: 600;
+      padding: 0.83rem 1.4rem;
+      margin: 1.1rem 0 0 0;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(44,174,139,0.12);
+      transition: background var(--transition), transform 0.13s;
+      outline: none;
+      will-change: transform;
+    }
+    .btn:active, .btn:focus {
+      transform: scale(0.97);
+      background: var(--emerald-light);
+    }
+    .btn:hover {
+      background: var(--emerald-light);
+    }
+    .incdec {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin: 0.3rem 0 0.7rem 0;
+    }
+    .incdec input[type="number"] {
+      width: 2.8rem;
+      text-align: center;
+      font-size: 1.17rem;
+      border-radius: 0.7rem;
+      border: 1.5px solid #c0d2e6;
+      outline: none;
+      margin: 0 0.6rem;
+      background: #e8f6f3;
+      color: #09305f;
+      font-weight: 600;
+      padding: 0.2rem 0;
+    }
+    .incdec .btn-mini {
+      padding: 0.2rem 0.7rem;
+      font-size: 1.2rem;
+      border-radius: 0.7rem;
+      background: var(--emerald);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: none;
+      transition: background var(--transition), transform 0.13s;
+    }
+    .incdec .btn-mini:active {
+      transform: scale(0.95);
+    }
+    .timer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+    .timer-icon {
+      color: var(--yellow);
+      font-size: 1.5rem;
+      margin-right: 0.2rem;
+      vertical-align: -3px;
+    }
+    .timer-main {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--yellow);
+      text-shadow: 0 1px 9px #ffed86, 0 0px 0 #fff;
+      text-align: center;
+      margin-bottom: 0.8rem;
+      animation: none;
+      transition: color 0.3s;
+    }
+    .timer-main.pulse {
+      animation: pulse 1s infinite;
+      color: #fff19a;
+    }
+    @keyframes pulse {
+      0% { color: #FFD60A;}
+      60% { color: #fff7bb;}
+      100% { color: #FFD60A;}
+    }
+    .players-row {
+      display: flex;
+      gap: 1.6rem;
+      justify-content: center;
+      margin: 1.4rem 0 0.4rem 0;
+    }
+    .player-icon, .spy-icon {
+      font-size: 1.4rem;
+      vertical-align: -3px;
+      margin-right: 0.25rem;
+    }
+    .spy-icon {
+      color: var(--red);
+      font-size: 1.3rem;
+    }
+    .roles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0.7rem 0 0.6rem 0;
+      width: 100%;
+      align-items: center;
+    }
+    .role-reveal {
+      background: var(--emerald);
+      color: var(--white);
+      border-radius: 0.7rem;
+      padding: 0.8rem 1.1rem;
+      font-weight: 600;
+      font-size: 1.08rem;
+      margin-bottom: 0.15rem;
+      min-width: 150px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      letter-spacing: 0.01em;
+    }
+    /* Animations for reveal */
+    .flip-card {
+      perspective: 800px;
+      width: 99%;
+    }
+    .flip-card-inner {
+      width: 100%;
+      transition: transform 0.49s cubic-bezier(.7,.2,.17,1);
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      backface-visibility: hidden;
+      width: 80%;
+      margin: 0 auto;
+      border-radius: var(--card-radius);
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      font-weight: 700;
+      padding: 2rem 0.8rem;
+      text-align: center;
+    }
+    .flip-card-front {
+      background: var(--white);
+      color: var(--bg);
+    }
+    .flip-card-back {
+      background: var(--red);
+      color: var(--white);
+      transform: rotateY(180deg);
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+      width: 80%;
+      margin: 0 auto;
+    }
+    /* Progress Bar */
+    .progressbar-bg {
+      background: #133152;
+      width: 100%;
+      height: 9px;
+      border-radius: 7px;
+      overflow: hidden;
+      margin: 0.7rem 0 1.5rem 0;
+    }
+    .progressbar {
+      height: 100%;
+      background: linear-gradient(90deg,#FFD60A 30%,#fffde5 100%);
+      width: 100%;
+      transition: width 0.9s cubic-bezier(.6,.8,.45,1);
+      border-radius: 7px;
+    }
+    /* Utility */
+    .center { text-align: center;}
+    .hidden { display: none !important;}
+    .fadein { animation: fadein 0.33s; }
+    /* Responsive */
+    @media (max-width: 500px) {
+      .container, .card { padding: 1.1rem 0.5rem; }
+      .card { max-width: 98vw; }
+      h1 { font-size: 1.47rem;}
+      .timer-main { font-size: 2.2rem;}
+    }
+    /* Icons (inline SVG) */
+    .svgicon { display:inline-block; width:1.5em; height:1.5em; vertical-align:middle;}
+  </style>
+</head>
+<body>
+  <div class="container" id="app"></div>
+  <audio id="spy-audio" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12fdac6e70.mp3"></audio>
+  <script>
+    // --- Game Words: You can customize or add more
+    const WORD_LIST = [
+      "Library", "Submarine", "Theater", "Airport", "Bakery",
+      "Museum", "Hospital", "Restaurant", "School", "Beach",
+      "Space Station", "Farm", "Castle", "Supermarket", "Circus",
+      "Amusement Park", "Concert Hall", "Zoo", "Bank", "Hotel"
+    ];
+
+    // --- Game State ---
+    let state = {
+      phase: "setup", // setup | reveal | discuss | end
+      players: 5,
+      spies: 1,
+      timer: 12*60, // seconds
+      roundTime: 12*60,
+      playerIdx: 0, // Current role being shown
+      roles: [], // {type: "word"|"spy"}
+      word: "",
+      revealOrder: [],
+      timerInt: null,
+      timerRunning: false,
+      timeLeft: 12*60,
+      allRolesRevealed: false
+    };
+
+    // --- Utility functions ---
+    function shuffle(arr) {
+      // Fisher-Yates
+      for(let i=arr.length-1; i>0; i--) {
+        const j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+      }
+      return arr;
+    }
+    function pad2(n) {
+      return n<10 ? "0"+n : ""+n;
+    }
+    function playSpySound() {
+      try {
+        document.getElementById("spy-audio").currentTime = 0;
+        document.getElementById("spy-audio").play();
+      } catch {}
+    }
+    // --- Main App Render ---
+    function render() {
+      const el = document.getElementById('app');
+      switch(state.phase) {
+        case "setup": renderSetup(el); break;
+        case "reveal": renderReveal(el); break;
+        case "discuss": renderDiscuss(el); break;
+        case "end": renderEnd(el); break;
+      }
+    }
+
+    // --- Setup Screen ---
+    function renderSetup(el) {
+      el.innerHTML = `
+        <div class="card fadein">
+          <h1><span class="svgicon">${playerSvg()}</span>Find the Spy</h1>
+          <label>Number of Players</label>
+          <div class="incdec">
+            <button class="btn-mini" onclick="decPlayers()">-</button>
+            <input type="number" id="players-inp" value="${state.players}" min="3" max="30" onchange="setPlayers(this.value)">
+            <button class="btn-mini" onclick="incPlayers()">+</button>
+          </div>
+          <label>Number of Spies</label>
+          <div class="incdec">
+            <button class="btn-mini" onclick="decSpies()">-</button>
+            <input type="number" id="spies-inp" value="${state.spies}" min="1" max="${state.players-1}" onchange="setSpies(this.value)">
+            <button class="btn-mini" onclick="incSpies()">+</button>
+          </div>
+          <label>Round Timer (minutes)</label>
+          <div class="timer-row">
+            <span class="timer-icon">${timerSvg()}</span>
+            <input type="number" id="timer-inp" value="${Math.round(state.roundTime/60)}" min="2" max="60" style="width:3.2rem; font-size:1.14rem; border-radius:0.6rem; padding:0.19rem 0.19rem;">
+          </div>
+          <button class="btn" onclick="startGame()">Start Game</button>
+        </div>
+        <div class="center mutetip" style="font-size:0.92rem;">
+          <span style="color:#FFDD55">Tip:</span> You only need one device.<br>Pass it to each player to reveal their role!
+        </div>
+      `;
+      // Prevent people entering out-of-bounds numbers
+      setTimeout(()=>{
+        document.getElementById("players-inp").onblur = function() { setPlayers(this.value); };
+        document.getElementById("spies-inp").onblur = function() { setSpies(this.value); };
+        document.getElementById("timer-inp").onblur = function() { setTimerMins(this.value); };
+      }, 0);
+    }
+
+    // --- Reveal Roles One by One ---
+    function renderReveal(el) {
+      const idx = state.playerIdx;
+      const total = state.players;
+      let title = `Player ${idx+1} of ${total}`;
+      let role = state.roles[state.revealOrder[idx]];
+      let flipClass = '';
+      let frontText = `<span style="font-size:1.2rem;">Tap to reveal your role</span>`;
+      let backText = '';
+      let isSpy = false;
+      if(state.allRolesRevealed) {
+        // After all have seen their roles, hide
+        el.innerHTML = `
+          <div class="card fadein center">
+            <h2>All roles distributed.</h2>
+            <div class="instruction">Start discussing!<br><span style="font-size:1.3rem;color:var(--red);font-weight:700;">Find the Spy!</span></div>
+            <button class="btn" onclick="startDiscussion()">Start Timer & Discuss</button>
+          </div>
+        `;
+        return;
+      }
+      if(state.showingRole) {
+        flipClass = 'flipped';
+        if(role.type==='word') {
+          backText = `
+            <div>
+              <span style="font-size:1.28rem; margin-top:0.6rem; font-weight:700;">${state.word}</span>
+              <div class="subtitle" style="color:#519f9d; font-size:1.02rem; margin-top:1rem;">
+                (Keep it secret!)
+              </div>
+            </div>`;
+        } else {
+          backText = `
+            <div>
+              <span style="font-size:1.23rem;font-weight:700;">You are the <span style="font-size:1.28rem; margin-top:0.6rem; font-weight:700;">Spy!</span></span>
+              <div class="subtitle" style="color:var(--red);font-size:1.05rem; margin-top:1rem;">
+                <span style="font-weight:700;">Your goal:</span><br>Blend in and guess the word!
+              </div>
+            </div>
+          `;
+          isSpy = true;
+        }
+      }
+      el.innerHTML = `
+        <div class="card fadein">
+          <div class="center subtitle">${title}</div>
+          <div class="flip-card ${flipClass}" id="flipcard" style="margin-top:0.8rem;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">${frontText}</div>
+              <div class="flip-card-back">${backText}</div>
+            </div>
+          </div>
+          <div class="center" style="margin-top:1.1rem;">
+            ${
+              state.showingRole
+              ? `<button class="btn" onclick="nextReveal()">Got it</button>`
+              : `<button class="btn" onclick="flipCard(${isSpy})">Reveal</button>`
+            }
+          </div>
+        </div>
+        <div class="center mutetip" style="font-size:0.97rem;">
+          Pass the device to the next player after hiding your role.
+        </div>
+      `;
+    }
+    // --- Gameplay (Discussion) Phase ---
+    function renderDiscuss(el) {
+      // Timer: mm:ss
+      let mm = Math.floor(state.timeLeft/60), ss = state.timeLeft%60;
+      let timerClass = "timer-main" + (state.timeLeft<=30 ? " pulse" : "");
+      let progress = Math.max(0,Math.min(1,state.timeLeft/state.roundTime));
+      el.innerHTML = `
+        <div class="card fadein">
+          <h1><span class="svgicon">${spySvg()}</span>Find the Spy</h1>
+          <div class="progressbar-bg">
+            <div class="progressbar" style="width:${progress*100}%"></div>
+          </div>
+          <div class="${timerClass}">
+            <span class="timer-icon">${timerSvg()}</span>
+            <span id="timer">${pad2(mm)}:${pad2(ss)}</span>
+          </div>
+          <div class="players-row">
+            <span class="player-icon">${playerSvg()}</span> <b>${state.players}</b> Players
+            &nbsp;&nbsp;&nbsp;
+            <span class="spy-icon">${spySvg()}</span> <b>${state.spies}</b> Spy
+          </div>
+          <div class="instruction">
+            Ask vague questions and deduce the spy!
+          </div>
+          <button class="btn" style="margin-top:0.4rem;" onclick="endDiscussion()">Reveal Roles</button>
+        </div>
+      `;
+    }
+    // --- End Phase: Role Reveal for All ---
+    function renderEnd(el) {
+      el.innerHTML = `
+        <div class="card fadein">
+          <h2>Round Over!</h2>
+          <div class="subtitle" style="color:var(--red);font-weight:700;">The secret word was: <span style="color:var(--emerald);">${state.word}</span></div>
+          <div class="roles-list">
+            ${state.revealOrder.map((idx,i) => {
+              let r = state.roles[idx];
+              if(r.type==='spy') {
+                return `<div class="role-reveal"><span class="spy-icon">${spySvg()}</span> Player ${i+1} - <span style="color:var(--red);font-weight:700;">Spy</span></div>`;
+              } else {
+                return `<div class="role-reveal"><span class="player-icon">${playerSvg()}</span> Player ${i+1} - <span style="color:var(--emerald);font-weight:700;">Knows word</span></div>`;
+              }
+            }).join("")}
+          </div>
+          <button class="btn" onclick="newRound()">Start New Round</button>
+        </div>
+      `;
+    }
+
+    // --- UI Event Handlers & Game Logic ---
+    window.decPlayers = function() {
+      state.players = Math.max(3, state.players-1);
+      if(state.spies>=state.players) state.spies = state.players-1;
+      render();
+    }
+    window.incPlayers = function() {
+      state.players = Math.min(state.players+1,30);
+      if(state.spies>=state.players) state.spies = state.players-1;
+      render();
+    }
+    window.setPlayers = function(val) {
+      let n = Math.max(3, Math.min(30, parseInt(val)||3));
+      state.players = n;
+      if(state.spies>=n) state.spies = n-1;
+      render();
+    }
+    window.decSpies = function() {
+      state.spies = Math.max(1, state.spies-1);
+      render();
+    }
+    window.incSpies = function() {
+      state.spies = Math.min(state.players-1, state.spies+1);
+      render();
+    }
+    window.setSpies = function(val) {
+      let n = Math.max(1, Math.min(state.players-1, parseInt(val)||1));
+      state.spies = n;
+      render();
+    }
+    window.setTimerMins = function(val) {
+      let n = Math.max(2, Math.min(60, parseInt(val)||12));
+      state.roundTime = n*60;
+      render();
+    }
+
+    window.startGame = function() {
+      // Choose word, assign spies
+      let word = pickWord();
+      let arr = Array(state.players-state.spies).fill({type:"word"});
+      arr = arr.concat(Array(state.spies).fill({type:"spy"}));
+      let revealOrder = Array.from({length: state.players}, (_,i)=>i);
+      shuffle(arr);
+      shuffle(revealOrder);
+      state.roles = arr;
+      state.word = word;
+      state.phase = "reveal";
+      state.playerIdx = 0;
+      state.showingRole = false;
+      state.revealOrder = revealOrder;
+      state.allRolesRevealed = false;
+      render();
+    };
+
+    function pickWord() {
+      // Choose a random word, avoid repeats
+      let prev = (localStorage['spy_words']||"").split("|");
+      let options = WORD_LIST.filter(w=>!prev.includes(w));
+      if(!options.length) options = WORD_LIST;
+      let word = options[Math.floor(Math.random()*options.length)];
+      // Save to history
+      prev.push(word);
+      if(prev.length>20) prev.shift();
+      localStorage['spy_words'] = prev.join("|");
+      return word;
+    }
+
+    window.flipCard = function(isSpy) {
+      state.showingRole = true;
+      render();
+      if(isSpy) playSpySound();
+      // Animate card flip
+      setTimeout(()=>{
+        let fc = document.getElementById('flipcard');
+        if(fc) fc.classList.add('flipped');
+      }, 70);
+    };
+
+    window.nextReveal = function() {
+      // Next player, or finish
+      state.showingRole = false;
+      state.playerIdx += 1;
+      if(state.playerIdx>=state.players) {
+        state.allRolesRevealed = true;
+      }
+      render();
+    };
+
+    window.startDiscussion = function() {
+      state.phase = "discuss";
+      state.timeLeft = state.roundTime;
+      state.timerRunning = true;
+      render();
+      state.timerInt = setInterval(()=>{
+        if(!state.timerRunning) return;
+        state.timeLeft -= 1;
+        if(state.timeLeft<=0) {
+          clearInterval(state.timerInt);
+          state.timeLeft = 0;
+          state.timerRunning = false;
+        }
+        // Update timer only, for efficiency
+        let timer = document.getElementById('timer');
+        if(timer) {
+          let mm = Math.floor(state.timeLeft/60), ss = state.timeLeft%60;
+          timer.textContent = pad2(mm)+":"+pad2(ss);
+          // Progress bar
+          let progress = Math.max(0,Math.min(1,state.timeLeft/state.roundTime));
+          let pb = document.querySelector('.progressbar');
+          if(pb) pb.style.width = (progress*100)+'%';
+          if(state.timeLeft<=30) {
+            timer.parentElement.classList.add("pulse");
+          }
+        }
+        if(state.timeLeft<=0) {
+          setTimeout(()=>{ endDiscussion(); }, 800);
+        }
+      }, 1000);
+    };
+
+    window.endDiscussion = function() {
+      if(state.timerInt) clearInterval(state.timerInt);
+      state.phase = "end";
+      state.timerRunning = false;
+      render();
+    };
+
+    window.newRound = function() {
+      state.phase = "setup";
+      state.playerIdx = 0;
+      state.showingRole = false;
+      state.allRolesRevealed = false;
+      state.roundTime = state.roundTime || (12*60);
+      state.timer = state.roundTime;
+      state.timeLeft = state.roundTime;
+      render();
+    };
+
+    // --- SVG ICONS ---
+    function timerSvg() {
+      return `<svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v5l3 2"/><path d="M9 2h6"/></svg>`;
+    }
+    function playerSvg() {
+      return `<svg fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 8 0v2"/></svg>`;
+    }
+    function spySvg() {
+      return `<svg fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24"><ellipse cx="12" cy="9" rx="8" ry="3"/><path d="M4 9c0 5 4 9 8 9s8-4 8-9"/><circle cx="8.5" cy="9" r="0.8"/><circle cx="15.5" cy="9" r="0.8"/></svg>`;
+    }
+    function wordSvg() {
+      return `<svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 9h10M7 13h6"/></svg>`;
+    }
+    // --- Initialize
+    render();
+
+  </script>
+</body>
+</html>
