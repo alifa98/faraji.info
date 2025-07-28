@@ -1,5 +1,10 @@
 [
   {
+    "title": "Thoughts on Subliminal Learning from Anthropic team",
+    "link": "https://blog.faraji.info/machine-learning/subliminal-learning.html",
+    "published": "2025-07-27T20:29:04+00:00"
+  },
+  {
     "title": "ICML 2025 top 50 Papers That Might Shape the Future of ML \u2014 According to Gemini",
     "link": "https://blog.faraji.info/machine-learning/icml-2025-top-papers.html",
     "published": "2025-07-12T09:33:04+00:00"
@@ -18,10 +23,5 @@
     "title": "ChatGPT Internal Library: Ace Tools",
     "link": "https://blog.faraji.info/security/chat-gpt-internal-lib-ace-tools.html",
     "published": "2025-03-29T21:56:14+00:00"
-  },
-  {
-    "title": "Confirmation Bias",
-    "link": "https://blog.faraji.info/cognitive-science/confirmation-bias.html",
-    "published": "2025-01-29T02:56:57+00:00"
   }
 ]
