@@ -1,5 +1,10 @@
 [
   {
+    "title": "From Words to Worlds: Dreaming of a Universal Language of Space-Time",
+    "link": "https://blog.faraji.info/2025/word-to-world/",
+    "published": "2025-09-17T03:57:32+00:00"
+  },
+  {
     "title": "Game Theory: Fair Division",
     "link": "https://blog.faraji.info/2025/fair-division/",
     "published": "2025-08-17T01:29:04+00:00"
@@ -18,10 +23,5 @@
     "title": "I can speak Toronto: Pretraining a Trajectory Foundation Model",
     "link": "https://blog.faraji.info/machine-learning/trajectory-foundation-model.html",
     "published": "2025-06-13T17:21:04+00:00"
-  },
-  {
-    "title": "Jaywalking I: The Description",
-    "link": "https://blog.faraji.info/optimization/jay-walking-1.html",
-    "published": "2025-04-29T01:32:04+00:00"
   }
 ]
