@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "title": "Clopper-Pearson vs Blaker: Exact Confidence Intervals for Proportions",
+    "link": "https://blog.faraji.info/2026/cp-confidence-intervals/",
+    "published": "2026-08-31T02:00:00+00:00"
+  },
+  {
+    "title": "Nested Learning: a new HOPE for AI",
+    "link": "https://blog.faraji.info/2025/nested-learning/",
+    "published": "2025-11-29T23:00:00+00:00"
+  },
+  {
+    "title": "From Words to Worlds: Dreaming of a Universal Language of Space-Time",
+    "link": "https://blog.faraji.info/2025/word-to-world/",
+    "published": "2025-09-17T03:57:32+00:00"
+  },
+  {
+    "title": "Game Theory: Fair Division",
+    "link": "https://blog.faraji.info/2025/fair-division/",
+    "published": "2025-08-17T01:29:04+00:00"
+  },
+  {
+    "title": "Thoughts on Subliminal Learning from Anthropic team",
+    "link": "https://blog.faraji.info/machine-learning/subliminal-learning.html",
+    "published": "2025-07-27T20:29:04+00:00"
+  }
+]
